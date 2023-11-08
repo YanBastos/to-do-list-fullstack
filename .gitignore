@@ -1,2 +1,6 @@
 /to-do-list-fullstack/node_modules
 /to-do-list-fullstack/.env
+
+node_modules
+.env
+env
