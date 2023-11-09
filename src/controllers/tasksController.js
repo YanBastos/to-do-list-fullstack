@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
-const { response } = require('express');
+const { response, request } = require('express');
 const tasksModel = require('../models/tasksModel');
 
 
@@ -22,10 +22,19 @@ const deleteTask = async (req, res) => {
   return res.status(204).json();
 };
 
+const updateTask = async (req, res) => {
+  
+  const { id } = req.params;
+  
+  await tasksModel.updateTask(id,request.body);
+  return res.status(204).json();
 
+
+};
 
 module.exports = {
   getAll,
   createTask,
   deleteTask,
+  updateTask
 };
